@@ -23,20 +23,29 @@
         <main class="Home-grid">
             <h1 class="title">Tomahawk Grill</h1>
 
-            <div id="hero">
-                <img class="carousel_img" src="./images/home01.jpg" alt="Image01">
-                <img class="carousel_img" src="./images/home02.jpg" alt="Image02">
-                <img class="carousel_img" src="./images/home03.jpg" alt="Image03">
-                <img class="carousel_img" src="./images/home04.jpg" alt="Image04">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img id="lastClone" class="carousel_img" src="./images/home04.jpg">
+                    <img class="carousel_img" src="./images/home01.jpg">
+                    <img class="carousel_img" src="./images/home02.jpg">
+                    <img class="carousel_img" src="./images/home03.jpg">
+                    <img class="carousel_img" src="./images/home04.jpg">
+                    <img id="firstClone" class="carousel_img" src="./images/home01.jpg">
+                </div>
             </div>
 
+            <button id="prevBtn">Prev</button>
+            <button id="nextBtn">Next</button>
+
             <div class="home-text">
-                <p>Come down to the Tomahawk Grill, the gormet food truck to satisfy your tastebuds every time, guaranteed.
-                    Try our mouthwatering steaks or our perfectly seasoned burger. Couple the entrée with a steaming side of your choice and
-                    complete the meal with a drink and enjoy the outdoors.</p>
-                <h3>Great food for any occasion!</h3>
-                <div class="button-box">
-                    <a class="book" href="contactus.html">Book Now</a>
+                <div id="background">
+                    <p>Come down to the Tomahawk Grill, the gormet food truck to satisfy your tastebuds every time, guaranteed.
+                        Try our mouthwatering steaks or our perfectly seasoned burger. Couple the entrée with a steaming side of your choice and
+                        complete the meal with a drink and enjoy the outdoors.</p>
+                    <h3>Great food for any occasion!</h3>
+                    <div class="button-box">
+                        <a class="book" href="contactus.html">Book Now</a>
+                    </div>
                 </div>
             </div>
         </main>
@@ -58,5 +67,46 @@
                 </div>
         </footer>
     </div>
+
+    <script>
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const carouselImages = document.querySelectorAll('.carousel-slide img')
+
+        const prevBtn = document.querySelector('#prevBtn');
+        const nextBtn = document.querySelector('#nextBtn');
+
+        let counter = 1;
+        const size = carouselImages[0].clientWidth
+
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+        nextBtn.addEventListener('click', ()=> {
+            if (counter >= carouselImages.length - 1) return;
+            carouselSlide.style.transition = "transform 0.4s ease-in-out";
+            counter++;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        });
+
+        prevBtn.addEventListener('click', ()=> {
+            if (counter <= 0) return;
+            carouselSlide.style.transition = "transform 0.4s ease-in-out";
+            counter--;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        });
+
+        carouselSlide.addEventListener('transitionend', ()=> {
+            if (carouselImages[counter].id === 'lastClone'){
+                carouselSlide.style.transition = "none";
+                counter = carouselImages.length -2;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            }
+            if (carouselImages[counter].id === 'firstClone'){
+                carouselSlide.style.transition = "none";
+                counter = carouselImages.length - counter;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            }
+        })
+    </script>
+
 </body>
 </html>
