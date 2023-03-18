@@ -27,12 +27,12 @@
                 <i id="prevBtn" class="fa-solid fa-chevron-left"></i>
                 <i id="nextBtn" class="fa-solid fa-chevron-right"></i>
                 <div class="carousel-slide">
-                    <img id="lastClone" class="carousel_img" src="./images/home04.jpg">
-                    <img class="carousel_img" src="./images/home01.jpg">
-                    <img class="carousel_img" src="./images/home02.jpg">
-                    <img class="carousel_img" src="./images/home03.jpg">
-                    <img class="carousel_img" src="./images/home04.jpg">
-                    <img id="firstClone" class="carousel_img" src="./images/home01.jpg">
+                    <img id="lastClone" class="carousel_img" src="./images/home04.jpg" alt="Home Image 4 copy">
+                    <img class="carousel_img" src="./images/home01.jpg" alt="Home Image 1">
+                    <img class="carousel_img" src="./images/home02.jpg" alt="Home Image 2">
+                    <img class="carousel_img" src="./images/home03.jpg" alt="Home Image 3">
+                    <img class="carousel_img" src="./images/home04.jpg" alt="Home Image 4">
+                    <img id="firstClone" class="carousel_img" src="./images/home01.jpg" alt="Home Image 1 copy">
                 </div>
             </div>
 
@@ -63,13 +63,13 @@
 
     <script>
         const carouselSlide = document.querySelector('.carousel-slide');
-        const carouselImages = document.querySelectorAll('.carousel-slide img')
+        const carouselImages = document.querySelectorAll('.carousel-slide img');
 
         const prevBtn = document.querySelector('#prevBtn');
         const nextBtn = document.querySelector('#nextBtn');
 
         let counter = 1;
-        const size = carouselImages[0].clientWidth
+        const size = carouselImages[0].clientWidth;
 
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
