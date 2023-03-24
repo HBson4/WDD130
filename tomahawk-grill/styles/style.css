@@ -186,7 +186,9 @@ footer a:hover {
 .heading {
     font-size: 50px;
     font-family: var(--heading-font);
-    color: var(--accent1-color)
+    color: var(--accent1-color);
+    background-color: var(--secondary-color);
+    padding-left: 15px;
 }
 
 .entrees {
@@ -213,10 +215,12 @@ footer a:hover {
 
 .food-name {
     font-family: var(--heading-font);
+    color: var(--primary-color);
 }
 
 .food-description {
     font-family: var(--paragraph-font);
+    color: var(--accent1-color);
 }
 
 
@@ -240,6 +244,7 @@ footer a:hover {
 
 .schedule-list {
     font-family: var(--paragraph-font);
+    padding-left: 15px;
 }
 
 /* -------------------- CONTACT PAGE -------------------- */
