@@ -247,4 +247,55 @@ footer a:hover {
     padding-left: 15px;
 }
 
+.button-box2 {
+    padding-top: 50px;
+}
+
 /* -------------------- CONTACT PAGE -------------------- */
+        
+.form-wrap {
+    width: 320px; 
+    /* background: var(--secondary-color);  */
+    padding: 40px 20px; 
+    box-sizing: border-box; 
+    margin: 0 auto;
+    border: 5px solid var(--secondary-color);
+}
+
+.info {
+    text-align: center; 
+    color: var(--accent1-color); 
+    font-weight: normal; 
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%; 
+    background: none; 
+    border: 1px solid var(--primary-color); 
+    border-radius: 3px; 
+    padding: 6px 15px; 
+    box-sizing: border-box; 
+    margin-bottom: 20px; 
+    font-size: 16px; 
+    color: var(--primary-color);
+}
+
+input[type="message"] {
+    height: 72px;
+}
+
+input[type="button"] { 
+    background: var(--accent1-color); 
+    border: 0; 
+    cursor: pointer; 
+    color: var(--accent2-color);
+}
+input[type="button"]:hover {
+    background: var(--primary-color); 
+    transition: .4s;
+}
+
+::placeholder {
+    color: var(--primary-color);
+}
